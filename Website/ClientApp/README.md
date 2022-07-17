@@ -1,3 +1,7 @@
+.NET 6 | Angular 13 | VS Code
+Youtube Playlist
+https://www.youtube.com/watch?v=7dcb2q6DEJ4&list=PL3bZgRwfEkih8QHFjojoslXG2imtw_DE-
+
 # Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.

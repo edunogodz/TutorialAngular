@@ -3,7 +3,7 @@
 namespace Website.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[api/controller]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -21,6 +21,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet]
     public IEnumerable<WeatherForecast> Get()
     {
+        _logger.LogDebug("SOmething called the api");
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
