@@ -2,6 +2,30 @@
     "version": "2.0.0",
     "tasks": [
         {
+           "label": "Cleanup Old Coverage Files",
+            "command": "Remove-Item",
+            "type": "shell",
+            "args": [
+                "-ErrorAction",
+                "Ignore",            
+                "${workspaceFolder}/ coverage",
+                "-Force",
+                "-Recurse;",
+                "return 0"
+            ]
+        },
+        {
+            "label": "Run Unit Tests with Coverage",
+            "dependsOn":["Cleanup Old Coverage Files"],
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "--collect:\"XPlat Code Coverage\"",                
+                "--results-directory: \"coverage\""               
+            ]
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
